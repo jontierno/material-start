@@ -142,5 +142,8 @@ span.name {
 }
 
 #login-container {
-  min-height: 400px !important
+  min-height: 600px !important
 }
+
+#login-container div#status {
+  color: #c60008; }
