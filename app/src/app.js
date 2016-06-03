@@ -1,5 +1,5 @@
 angular
-    .module('fiubaApp', ['ngMaterial', 'login','users', ])
+    .module('fiubaApp', ['ngMaterial','ui.router','users', 'home'])
     .config(function($mdThemingProvider, $mdIconProvider){
 
         $mdIconProvider
