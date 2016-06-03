@@ -36,7 +36,13 @@
          return deferred.promise;   
       },
       getCurrentUser: function () {
-         return $q.when(authenticatedUser);
+          var def = $q.defer();
+          if(authenticatedUser) {
+            def.resolve(authenticatedUser)
+          } else {
+            def.reject();
+          }
+         return def.promise;
       },
       logout: function () {
         

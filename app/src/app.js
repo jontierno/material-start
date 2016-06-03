@@ -1,5 +1,5 @@
 angular
-    .module('fiubaApp', ['ngMaterial','ui.router','login', 'career', 'main'])
+    .module('fiubaApp', ['ngMaterial','ui.router','login','auth', 'career', 'main'])
     .config(function($mdThemingProvider, $mdIconProvider, $stateProvider, $urlRouterProvider){
 
      //   $mdIconProvider
@@ -23,7 +23,26 @@ angular
         .state('app', {
           templateUrl: "src/main/view/main.html",
           controller: 'MainController as main',
-          abstract: true
+          abstract: true,
+          resolve: {
+
+                // A string value resolves to a service
+                authService: 'authService',
+
+                // A function value resolves to the return
+                // value of the function
+                authorization: function(authService, $q, $state, $log){
+                    var defer = $q.defer();
+                    authService.getCurrentUser().then(function(){
+                        defer.resolve();
+                    }, function(){
+                      $log.debug("Not user found");
+                      $state.go("login");
+                    })
+
+                    return defer.promise;
+                }
+            }
         })
         .state('app.wellcome', {
           url: "/home",
