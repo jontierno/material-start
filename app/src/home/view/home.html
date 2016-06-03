@@ -1,15 +1,15 @@
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleMenu()" aria-label="Show Menu">
+      <md-button class="menu" hide-gt-sm ng-click="home.toggleMenu()" aria-label="Show Menu">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
       <h1>Fiuba App</h1>
     </md-toolbar>
 
     <div flex layout="row">
-        <md-sidenav  ng-click="ul.toggleMenu()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" >
+        <md-sidenav  ng-click="home.toggleMenu()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" >
           <md-list>
-            <md-list-item ng-repeat="it in ul.menues">
-                <md-button ng-click="ul.navigate(it)" ng-class="{'selected' : it === ul.selected }">
+            <md-list-item ng-repeat="it in home.menues">
+                <md-button ng-click="home.navigate(it)" ng-class="{'selected' : it === ul.selected }">
                   <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
                   {{it.name}}
                 </md-button>
