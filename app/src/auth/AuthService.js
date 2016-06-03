@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('auth')
-         .service('authService', ['$q', AuthService]);
+         .service('authService', ['$q','userService', AuthService]);
 
   /**
    * Users DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AuthService($q){
+  function AuthService($q, userService){
 
     var users = [
       {
@@ -26,13 +26,20 @@
     return {
       login : function(user) {
         var deferred = $q.defer();
-        for(var i in users) {
-          if(users[i].username == user.username && users[i].password == user.password){
-            authenticatedUser = users[i];
-            deferred.resolve();
-          }
-        }
-        deferred.reject('Username/Pasword invalid');
+
+        userService.loadUser(user.username)
+          .then(function (userFound) {
+              if(userFound.password == user.password) {
+                authenticatedUser = users[i];
+                deferred.resolve();
+              } else {
+                deferred.reject('Username/Pasword invalid');
+              }
+
+          }, function (){
+            deferred.reject('Username/Pasword invalid');
+          });
+        
          return deferred.promise;   
       }
 
