@@ -1,6 +1,6 @@
 angular
-    .module('fiubaApp', ['ngMaterial','ui.router','users', 'home'])
-    .config(function($mdThemingProvider, $mdIconProvider){
+    .module('fiubaApp', ['ngMaterial','ui.router','login', 'home'])
+    .config(function($mdThemingProvider, $mdIconProvider, $stateProvider, $urlRouterProvider){
 
         $mdIconProvider
             .defaultIconSet("./assets/svg/avatars.svg", 128)
@@ -12,7 +12,29 @@ angular
             .icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
             $mdThemingProvider.theme('default')
-                .primaryPalette('blue')
+                .primaryPalette('light-blue')
                 .accentPalette('red');
+          //
+      // For any unmatched url, redirect to /state1
+      $urlRouterProvider.otherwise("/home");
+      //
+      // Now set up the states
+      $stateProvider
+        .state('app', {
+          
+          templateUrl: "src/home/view/home.html",
+          controller: 'HomeController as home',
+          abstract: true
+        })
+        .state('app.home', {
+          url: "/home",
+          templateUrl: "src/home/view/wellcome.html"
+          
+        })
+        .state('login', {
+          url: "/login",
+          templateUrl: "src/login/view/login.html",
+          controller: 'LoginController as login'
+        }); 
 
     });

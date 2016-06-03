@@ -45,7 +45,7 @@
      * @param menuId
      */
     function navigate ( menu ) {
-
+      debugger;
       $state.go(menu.link);
     }
 

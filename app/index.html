@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
   <head>
-    <title>Angular Material - Starter App</title>
+    <title>Fiuba App</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,29 +25,7 @@
 
   <body ng-app="fiubaApp" layout="column" ng-controller="HomeController as ul" ng-cloak>
 
-    <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleMenu()" aria-label="Show Menu">
-        <md-icon md-svg-icon="menu" ></md-icon>
-      </md-button>
-      <h1>Fiuba App</h1>
-    </md-toolbar>
-
-    <div flex layout="row">
-        <md-sidenav  ng-click="ul.toggleMenu()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" >
-          <md-list>
-            <md-list-item ng-repeat="it in ul.menues">
-                <md-button ng-class="{'selected' : it === ul.selected }">
-                  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-                  {{it.name}}
-                </md-button>
-            </md-list-item>
-          </md-list>
-        </md-sidenav>
-
-        <md-content flex id="content" ui-view>
-
-        </md-content>
-
+    <div ui-view>
     </div>
 
     <script src="../node_modules/angular/angular.js"></script>
@@ -60,6 +38,9 @@
     <script src="./src/home/Home.js"></script>
     <script src="./src/home/HomeController.js"></script>
     <script src="./src/home/HomeService.js"></script>
+    <script src="./src/login/Login.js"></script>
+    <script src="./src/login/LoginController.js"></script>
+    <script src="./src/login/LoginService.js"></script>
     <script src="./src/users/Users.js"></script>
     <script src="./src/users/UserController.js"></script>
     <script src="./src/users/UserService.js"></script>
