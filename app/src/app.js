@@ -1,5 +1,5 @@
 angular
-    .module('fiubaApp', ['ngMaterial','ui.router','login', 'home'])
+    .module('fiubaApp', ['ngMaterial','ui.router','login', 'main'])
     .config(function($mdThemingProvider, $mdIconProvider, $stateProvider, $urlRouterProvider){
 
      //   $mdIconProvider
@@ -21,14 +21,13 @@ angular
       // Now set up the states
       $stateProvider
         .state('app', {
-          
-          templateUrl: "src/home/view/home.html",
-          controller: 'HomeController as home',
+          templateUrl: "src/main/view/main.html",
+          controller: 'MainController as main',
           abstract: true
         })
-        .state('app.home', {
+        .state('app.wellcome', {
           url: "/home",
-          templateUrl: "src/home/view/wellcome.html"
+          templateUrl: "src/main/view/wellcome.html"
         })
         .state('login', {
           url: "/login",

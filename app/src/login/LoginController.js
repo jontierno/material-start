@@ -18,7 +18,7 @@
     	self.status="";
     	authService.login(self.user)
     	.then(function () {
-    		$state.go("app.home");
+    		$state.go("app.wellcome");
     	}, function(message) {
     		$log.debug(message);
     		self.status=message;

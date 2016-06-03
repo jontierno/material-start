@@ -1,20 +1,13 @@
 (function(){
 
   angular
-       .module('home')
-       .controller('HomeController', [
-          'homeService', 'authService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', '$state',
-          HomeController
+       .module('main')
+       .controller('MainController', [
+          'mainService', 'authService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', '$state',
+          MainController
        ]);
 
-  /**
-   * Main Controller for the Angular Material Starter App
-   * @param $scope
-   * @param $mdSidenav
-   * @param avatarsService
-   * @constructor
-   */
-  function HomeController( homeService,authService, $mdSidenav, $mdBottomSheet, $timeout, $log, $state ) {
+  function MainController( mainService,authService, $mdSidenav, $mdBottomSheet, $timeout, $log, $state ) {
     var self = this;
 
     self.menues        = [ ];
@@ -30,7 +23,7 @@
 
     // Load menu
 
-    homeService
+    mainService
           .loadMenu()
           .then( function( menues ) {
             self.menues    = [].concat(menues);

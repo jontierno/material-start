@@ -1,21 +1,16 @@
 (function(){
   'use strict';
 
-  angular.module('home')
-         .service('homeService', ['$q', 'authService', HomeService]);
+  angular.module('main')
+         .service('mainService', ['$q', 'authService', '$state', MainService]);
 
-  /**
-   * Users DataService
-   * Uses embedded, hard-coded data model; acts asynchronously to simulate
-   * remote data service call(s).
-   *
-   * @returns {{loadAll: Function}}
-   * @constructor
-   */
 
-  function HomeService($q, authService){
+  function MainService($q, authService){
     authService.getCurrentUser().then(function(user){
       self.currentUser = user;
+      if(!user) {
+
+      }
     });
     var menues = [
       {
@@ -32,10 +27,9 @@
       }
     ];
 
-    // Promise-based API
     return {
       loadMenu : function() {
-        // Simulate async nature of real remote calls
+
         return $q.when(menues);
       }
     };
