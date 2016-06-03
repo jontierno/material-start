@@ -1,1 +1,35 @@
-asdasd
+<div id="login-container" flex layout="row" layout-align="center center">
+  <div id="login-box" flex>
+	  <md-toolbar>
+			    <div class="md-toolbar-tools">
+			      <h3>
+			        <span>Login</span>
+			      </h3>
+			    </div>
+  		</md-toolbar>
+    	<form name="loginForm">
+    		  <md-input-container>
+			    <label>User</label>
+			    <input name="username" ng-model="username" required md-maxlength="10" minlength="8">
+			    <div ng-messages="loginForm.username.$error" ng-show="loginForm.username.$dirty">
+			      <div ng-message="required">Es requerido!</div>
+			      <div ng-message="md-maxlength">Es muy largo!</div>
+			      <div ng-message="minlength">Es muy corto!</div>
+			    </div>
+			  </md-input-container>
+      		  <md-input-container>
+			    <label>Password</label>
+			    <input name="password" ng-model="password" required md-maxlength="12" minlength="8">
+			    <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$dirty">
+			      <div ng-message="required">Es requerido!</div>
+			      <div ng-message="md-maxlength">Es muy largo!</div>
+			      <div ng-message="minlength">Es muy corto!</div>
+			    </div>
+			  </md-input-container>
+    	</form>
+    	<div flex layout="row" layout-align="end center" >
+    		<md-button class="md-raised md-primary">Ingresar</md-button>
+    	</div>
+  </div>
+
+</div>

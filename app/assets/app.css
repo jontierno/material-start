@@ -129,3 +129,18 @@ span.name {
   font-size:1.1em;
   padding-left:5px;
 }
+
+
+/*LOGIN */
+#login-box {
+    border-radius: 25px;
+    padding: 20px; 
+    max-width: 300px;
+    min-height: 300px;
+    border-style: solid;
+    border-width: 5px;
+}
+
+#login-container {
+  min-height: 400px !important
+}

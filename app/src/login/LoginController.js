@@ -1,7 +1,7 @@
 (function(){
 
   angular
-       .module('login')
+       .module('login', [ 'ngMessages'])
        .controller('LoginController', [
           'loginService', '$log',
           LoginController
