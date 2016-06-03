@@ -3,16 +3,11 @@
   angular
        .module('login')
        .controller('LoginController', [
-          'loginService', '$mdSidenav', '$log',
+          'loginService', '$log',
           LoginController
        ]);
 
-  function LoginController( userService, $mdSidenav,  $log ) {
-    $mdSidenav('left')
-     .close()
-     .then(function(){
-       $log.debug('closed');
-     });
+  function LoginController( userService,  $log ) {
 
   }
 
