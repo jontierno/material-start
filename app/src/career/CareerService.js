@@ -13,6 +13,9 @@
         subjects: [{
           code: "75.73",
           description: "Arquitectura de Software"
+        },{
+          code: "75.07",
+          description: "Algoritmos y programación III"
         }]
       }
 
@@ -26,7 +29,7 @@
             if(careers[i].code == code) {
               deferred.resolve(angular.copy(careers[i]));
             }
-
+  
           }
           deferred.reject();
 
