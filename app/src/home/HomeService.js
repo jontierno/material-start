@@ -23,6 +23,12 @@
         avatar: 'create',
         state: 'inscription',
         roles: ['STUDENT']
+      },
+      {
+        name: 'Carrera',
+        avatar: 'star',
+        state: 'carreer',
+        roles: ['STUDENT']
       }
     ];
 

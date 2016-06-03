@@ -28,11 +28,7 @@ angular
         })
         .state('app.home', {
           url: "/home",
-          templateUrl: "src/home/view/wellcome.html",
-          controller: function () {
-            
-          }
-          
+          templateUrl: "src/home/view/wellcome.html"
         })
         .state('login', {
           url: "/login",

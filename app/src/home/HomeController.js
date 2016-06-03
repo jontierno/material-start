@@ -21,7 +21,11 @@
     self.toggleMenu   = toggleMenu;
     self.navigate = navigate;
     authService.getCurrentUser().then(function (user){
-      self.currentUser = user;
+     if(user) {
+        self.currentUser = user;
+     }  else {
+      $state.go("login");
+     }
     });
 
     // Load menu

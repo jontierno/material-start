@@ -13,13 +13,7 @@
    * @constructor
    */
   function AuthService($q, userService){
-    var authenticatedUser =       {
-        username: "user",
-        password  :"user",
-        name: "Jonathan Tierno",
-        roles: ['STUDENT']
-      };
-
+    var authenticatedUser =  null;
 
     // Promise-based API
     return {
