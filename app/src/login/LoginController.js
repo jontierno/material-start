@@ -8,7 +8,14 @@
        ]);
 
   function LoginController( userService,  $log ) {
+    var self = this;
+    self.user        = {};
 
+    self.login = login;
+
+    function login(){
+    	$log.debug("oaaa");
+    }
   }
 
 })();
