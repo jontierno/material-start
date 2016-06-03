@@ -16,20 +16,20 @@
       {
         name: 'Inscripciones',
         avatar: 'create',
-        state: 'inscription',
+        state: 'app.inscription',
         roles: ['STUDENT']
       },
       {
         name: 'Carrera',
         avatar: 'star',
-        state: 'carreer',
+        state: 'app.career',
         roles: ['STUDENT']
       }
     ];
 
     return {
       loadMenu : function() {
-
+        
         return $q.when(menues);
       }
     };

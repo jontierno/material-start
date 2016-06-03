@@ -1,5 +1,5 @@
 angular
-    .module('fiubaApp', ['ngMaterial','ui.router','login', 'main'])
+    .module('fiubaApp', ['ngMaterial','ui.router','login', 'career', 'main'])
     .config(function($mdThemingProvider, $mdIconProvider, $stateProvider, $urlRouterProvider){
 
      //   $mdIconProvider
@@ -33,6 +33,11 @@ angular
           url: "/login",
           templateUrl: "src/login/view/login.html",
           controller: 'LoginController as login'
+        })
+        .state('app.career', {
+          url: "/career",
+          templateUrl: "src/career/view/userCareer.html",
+          controller: 'UserCareerController as userCareer'
         }); 
 
     });
