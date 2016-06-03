@@ -13,15 +13,14 @@
    * @constructor
    */
   function AuthService($q, userService){
-
-    var users = [
-      {
+    var authenticatedUser =       {
         username: "user",
-        password  :"user"
-      }
-    ];
+        password  :"user",
+        name: "Jonathan Tierno",
+        roles: ['STUDENT']
+      };
 
-    var authenticatedUser = {};
+
     // Promise-based API
     return {
       login : function(user) {
@@ -30,7 +29,7 @@
         userService.loadUser(user.username)
           .then(function (userFound) {
               if(userFound.password == user.password) {
-                authenticatedUser = users[i];
+                authenticatedUser = userFound;
                 deferred.resolve();
               } else {
                 deferred.reject('Username/Pasword invalid');
@@ -41,6 +40,9 @@
           });
         
          return deferred.promise;   
+      },
+      getCurrentUser: function () {
+         return $q.when(authenticatedUser);
       }
 
     };

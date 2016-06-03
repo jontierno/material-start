@@ -145,3 +145,7 @@ span.name {
 
 #login-container div#status {
   color: #c60008; }
+
+#app-user {
+  padding-right: 50px;
+}

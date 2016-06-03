@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('home', [ 'ngMaterial' ]);
+  angular.module('home', [ 'ngMaterial', 'auth' ]);
 
 
 })();

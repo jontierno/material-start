@@ -9,6 +9,7 @@
       {
         username: "user",
         password  :"user",
+        name: "Jonathan Tierno",
         roles: ['STUDENT']
       }
     ];
@@ -22,7 +23,7 @@
         var deferred = $q.defer();
         for(var i in users) {
           if(users[i].username == username) {
-            derrered.resolve(angular.copy(users[i]));
+            deferred.resolve(angular.copy(users[i]));
           }
           deferred.reject();
           return deferred.promise;

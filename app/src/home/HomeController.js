@@ -3,7 +3,7 @@
   angular
        .module('home')
        .controller('HomeController', [
-          'homeService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', '$state',
+          'homeService', 'authService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', '$state',
           HomeController
        ]);
 
@@ -14,12 +14,15 @@
    * @param avatarsService
    * @constructor
    */
-  function HomeController( homeService, $mdSidenav, $mdBottomSheet, $timeout, $log, $state ) {
+  function HomeController( homeService,authService, $mdSidenav, $mdBottomSheet, $timeout, $log, $state ) {
     var self = this;
 
     self.menues        = [ ];
     self.toggleMenu   = toggleMenu;
     self.navigate = navigate;
+    authService.getCurrentUser().then(function (user){
+      self.currentUser = user;
+    });
 
     // Load menu
 
@@ -47,7 +50,6 @@
     function navigate ( menu ) {
       $state.go(menu.state);
     }
-
 
   }
 

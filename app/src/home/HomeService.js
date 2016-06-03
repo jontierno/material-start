@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('home')
-         .service('homeService', ['$q', HomeService]);
+         .service('homeService', ['$q', 'authService', HomeService]);
 
   /**
    * Users DataService
@@ -12,7 +12,11 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function HomeService($q){
+
+  function HomeService($q, authService){
+    authService.getCurrentUser().then(function(user){
+      self.currentUser = user;
+    });
     var menues = [
       {
         name: 'Inscripciones',
