@@ -5,8 +5,11 @@
       <div flex="90" layout="column" layout-align="center start">
         <h1 flex-offset-gt-sm="10">FiubaApp</h1>
       </div>
-      <div flex="90" id="app-user" hide-xs layout="column" layout-align="center end"> 
+      <div flex="90" id="app-user" hide-xs layout="row" layout-align="end center"> 
           <h1>{{main.currentUser.name}}</h1>
+          <md-button class="menu" ng-click="main.exit()" aria-label="Show Menu">
+            <md-icon aria-label="Menu" class="material-icons">exit_to_app</md-icon>
+          </md-button>
       </div>
     </md-toolbar>
 

@@ -13,6 +13,7 @@
     self.menues        = [ ];
     self.toggleMenu   = toggleMenu;
     self.navigate = navigate;
+    self.exit = exit;
     authService.getCurrentUser().then(function (user){
      if(user) {
         self.currentUser = user;
@@ -46,6 +47,12 @@
      */
     function navigate ( menu ) {
       $state.go(menu.state);
+    }
+
+    function exit() {
+      authService.logout().then(function () {
+        $state.go("login");
+      })
     }
 
   }

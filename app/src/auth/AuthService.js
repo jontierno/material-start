@@ -37,6 +37,13 @@
       },
       getCurrentUser: function () {
          return $q.when(authenticatedUser);
+      },
+      logout: function () {
+        
+        var deferred = $q.defer();
+        authenticatedUser = null;
+        deferred.resolve();
+        return deferred.promise;
       }
 
     };
