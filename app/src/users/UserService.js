@@ -10,7 +10,8 @@
         username: "user",
         password  :"user",
         name: "Jonathan Tierno",
-        roles: ['STUDENT']
+        roles: ['STUDENT'],
+        career: 10
       }
     ];
 
