@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('career', [ 'ngMaterial', 'auth']);
+  angular.module('career', [ 'ngMaterial']);
 
 
 })();

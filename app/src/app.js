@@ -1,5 +1,5 @@
 angular
-    .module('fiubaApp', ['ngMaterial','ui.router','login','auth', 'career', 'main'])
+    .module('fiubaApp', ['ngMaterial','ui.router','login','auth', 'career', 'register', 'main'])
     .config(function($mdThemingProvider, $mdIconProvider, $stateProvider, $urlRouterProvider){
 
      //   $mdIconProvider
@@ -11,9 +11,12 @@ angular
            // .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
             //.icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
-            $mdThemingProvider.theme('default')
-                .primaryPalette('light-blue')
-                .accentPalette('red');
+ $mdThemingProvider
+    .theme('default')
+    .primaryPalette('indigo')
+    .accentPalette('pink')
+    .warnPalette('red')
+    .backgroundPalette('blue-grey');
           //
       // For any unmatched url, redirect to /state1
       $urlRouterProvider.otherwise("/home");
@@ -57,6 +60,10 @@ angular
           url: "/career",
           templateUrl: "src/career/view/userCareer.html",
           controller: 'UserCareerController as userCareer'
-        }); 
+        }).state('app.inscription', {
+          url: "/register",
+          templateUrl: "src/register/view/register.html",
+          controller: 'RegisterController as regCtrl'
+        }); ; 
 
     });

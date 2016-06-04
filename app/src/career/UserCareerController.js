@@ -3,20 +3,18 @@
   angular
        .module('career')
        .controller('UserCareerController', [
-          'authService','careerService', '$log', '$state',
+          'careerService', '$log', '$state','$scope',
           UserCareerController
        ]);
 
-  function UserCareerController ( authService, careerService,  $log, $state ) {
+  function UserCareerController ( careerService,  $log, $state,$scope ) {
     var self = this;
     self.career = {};
 
-    authService.getCurrentUser().then(function(user){
-        careerService.loadCareer(user.career)
+        careerService.loadCareer($scope.currentUser.career)
             .then(function(career){
                 self.career = career;
             });
-    });
 
 
     

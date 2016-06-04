@@ -3,11 +3,11 @@
   angular
        .module('main')
        .controller('MainController', [
-          'mainService', 'authService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', '$state',
+          'mainService', 'authService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', '$state', '$scope',
           MainController
        ]);
 
-  function MainController( mainService,authService, $mdSidenav, $mdBottomSheet, $timeout, $log, $state ) {
+  function MainController( mainService,authService, $mdSidenav, $mdBottomSheet, $timeout, $log, $state,$scope ) {
     var self = this;
 
     self.menues        = [ ];
@@ -16,7 +16,7 @@
     self.exit = exit;
     authService.getCurrentUser().then(function (user){
      if(user) {
-        self.currentUser = user;
+        $scope.currentUser = user;
      }  else {
       $state.go("login");
      }

@@ -160,3 +160,19 @@ span.name {
 #app-user {
   padding-right: 50px;
 }
+
+/*Subjects */
+
+.subject-container .subject{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0eb;
+  cursor:pointer;
+  border-radius: 25px;
+}
+
+.subject-container .subject.selected{
+
+  background-color: #e0e0eb;
+
+}

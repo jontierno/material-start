@@ -11,11 +11,11 @@
         code: 10,
         description: "Ingeniería Informática",
         subjects: [{
-          code: "75.73",
-          description: "Arquitectura de Software"
+          code: "61.03",
+          description: "Analisis Matemático II"
         },{
-          code: "75.07",
-          description: "Algoritmos y programación III"
+          code: "75.40",
+          description: "Algoritmos y programación I"
         }]
       }
 
