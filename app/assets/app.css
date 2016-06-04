@@ -7,6 +7,7 @@ html, body {
 }
 
 /* Toolbar area */
+.md-scroll-mask { position: initial;}
 
 .menu {
   background-color: transparent;
@@ -178,4 +179,22 @@ span.name {
 -moz-box-shadow:    0px 0px 19px 0px rgba(50, 50, 50, 0.75);
 box-shadow:         0px 0px 19px 0px rgba(50, 50, 50, 0.75);
 
+}
+
+.course {
+  border: solid;
+  border-radius: 25px;
+}
+
+.course.selected {
+  -webkit-box-shadow: 0px 0px 19px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 19px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 19px 0px rgba(50, 50, 50, 0.75);
+}
+.course.disabled {
+  background-color: #e0e0eb;
+}
+
+.course .des-button.disabled {
+  display:none;
 }

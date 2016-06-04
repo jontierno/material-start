@@ -18,9 +18,40 @@
         <span>Cursos: {{regCtrl.selectedSubject.description}}</span>
       </div>
     </md-toolbar>
-    <div layout-padding>
-      <div ng-repeat="s in regCtrl.selectedCourses">
-          {{s.code + "- "+ s.professor}}          
+    <div layout-margin layout-padding layout-gt-sm="row">
+      <div  flex-gt-sm="50" ng-class="regCtrl.defineStyle(s)" class="course" ng-repeat="s in regCtrl.selectedCourses">
+            <div layout="column">
+              <span>Profesores</span>
+              <div layout-gt-sm="row" layout-margin>
+                  <span ng-repeat="p in s.professors">
+                      {{p}}
+                  </span>
+              </div>
+            </div>      
+            <div layout="column">
+              <span>Horarios</span>
+              <div class="class" layout="column" layout-margin>
+                  <span ng-repeat="p in s.classes">
+                      {{p.day + "(" + p.type + ")"+ ": " + p.from +"-" + p.to}}  
+                  </span>
+              </div>
+            </div> 
+            <div layout="row">
+              <span>Vacantes</span>
+              <div class="class" layout="column" layout-margin>
+                  <span >
+                        {{s.vacancy}}
+                  </span>
+              </div>
+            </div> 
+            <div layout="row" layout-align="end center"> 
+              <md-button ng-hide="regCtrl.anySelected" ng-click="regCtrl.selectCourse(s)" class="md-raised md-primary">
+                Inscribir
+              </md-button>
+              <md-button ng-show= "s.selected"  ng-click="regCtrl.deleteCourse(s)"  class="md-raised md-warn">
+                <md-icon aria-label="Delete" class="material-icons">delete_forever</md-icon>
+              </md-button>
+            <div>   
       </div>
     </div>
   </div>

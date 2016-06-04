@@ -31,7 +31,8 @@
         }
       },
         save: function(user) {
-          this.loadUser(user.username)
+          var promise = this.loadUser(user.username);
+          return promise
             .then(function(userFound) {
                userFound = angular.copy(user);
             });
