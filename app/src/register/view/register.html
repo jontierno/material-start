@@ -5,7 +5,7 @@
         <span>Materias</span>
       </div>
     </md-toolbar>
-    <div class="subject-container" layout-margin layout-padding layout="row">
+    <div class="subject-container" layout-margin layout-padding layout-gt-sm="row">
       <div ng-click="regCtrl.selectSubject(s)" ng-class="{selected: s.selected}" md-colors="{color: 'red-A100', border-color: 'primary-600'}"
       class="subject" ng-repeat="s in regCtrl.career.subjects">
         {{s.code + "- "+ s.description}}          
@@ -19,9 +19,8 @@
       </div>
     </md-toolbar>
     <div layout-padding>
-      <span class="md-title">Materias</span>
-      <div ng-repeat="s in regCtrl.career.subjects">
-      {{s.code + "- "+ s.description}}          
+      <div ng-repeat="s in regCtrl.selectedCourses">
+          {{s.code + "- "+ s.professor}}          
       </div>
     </div>
   </div>

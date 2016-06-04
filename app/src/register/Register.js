@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('register', ['career', 'ngMaterial']);
+  angular.module('register', ['career', 'course']);
 
 
 })();

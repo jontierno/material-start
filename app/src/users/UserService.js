@@ -10,7 +10,8 @@
         username: "user",
         password  :"user",
         name: "Jonathan Tierno",
-        career: 10
+        career: 10,
+        registers: []
       }
     ];
 

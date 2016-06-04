@@ -169,10 +169,13 @@ span.name {
   border-color: #e0e0eb;
   cursor:pointer;
   border-radius: 25px;
+  outline: none;
 }
 
 .subject-container .subject.selected{
 
-  background-color: #e0e0eb;
+-webkit-box-shadow: 0px 0px 19px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 19px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 19px 0px rgba(50, 50, 50, 0.75);
 
 }
