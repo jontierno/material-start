@@ -19,8 +19,8 @@
       </div>
     </md-toolbar>
     <div layout-margin layout-padding layout-gt-sm="row">
-          <div ng-class="regCtrl.defineStyle(s)" layout-padding ng-repeat="s in regCtrl.selectedCourses" class="course">
-            <course-view flex course="s"></course-view>
+          <div ng-class="regCtrl.defineStyle(s)" flex-gt-sm="50" layout-padding ng-repeat="s in regCtrl.selectedCourses" class="course">
+            <course-view  course="s"></course-view>
             <div layout="row" layout-align="end center"> 
                 <md-button ng-hide="regCtrl.anySelected" ng-click="regCtrl.selectCourse(s)" class="md-raised md-primary">
                   Inscribir
