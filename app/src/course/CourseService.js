@@ -64,6 +64,15 @@
         
         return $q.when(result);
       },
+      getCourse: function (subject, code) {
+        for(var i in courses) {
+            if(courses[i].subject == subject && courses[i].code == code) {
+              return $q.when(angular.copy(courses[i]));
+            }
+        }
+        
+        return $q.reject("Course not found");
+      },
       register: function (course) {
           for(var i in courses) {
             if(courses[i].subject == course.subject && courses[i].code == course.code) {

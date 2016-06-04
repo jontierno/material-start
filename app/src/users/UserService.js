@@ -12,6 +12,8 @@
         name: "Jonathan Tierno",
         career: 10,
         registers: []
+//        registers: [{code: "11A",
+ //       subject: '61.03'}]
       }
     ];
 

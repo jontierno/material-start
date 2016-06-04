@@ -22,11 +22,8 @@ function Coursedirective() {
 	
    directive.compile = function(element, attributes) {
       
-      //linkFunction is linked with each element with scope to get the element specific data.
       var linkFunction = function($scope, element, attributes) {
-      	console.log("prueba");
-         //element.html("Student: <b>"+$scope.student.name +"</b> , Roll No: <b>"+$scope.student.rollno+"</b><br/>");
-         //element.css("background-color", "#ff00ff");
+
      }
       return linkFunction;
    }

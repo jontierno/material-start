@@ -64,6 +64,10 @@ angular
           url: "/register",
           templateUrl: "src/register/view/register.html",
           controller: 'RegisterController as regCtrl'
+        }).state('app.inscriptions', {
+          url: "/viewregisters",
+          templateUrl: "src/register/view/viewRegisters.html",
+          controller: 'ViewRegistersController as regCtrl'
         }); ; 
 
     });

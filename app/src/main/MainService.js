@@ -14,15 +14,15 @@
     });
     var menues = [
       {
-        name: 'Inscripciones',
+        name: 'Inscribir',
         avatar: 'create',
         state: 'app.inscription',
         roles: ['STUDENT']
       },
       {
-        name: 'Carrera',
-        avatar: 'star',
-        state: 'app.career',
+        name: 'Ver Inscripciones',
+        avatar: 'done_all',
+        state: 'app.inscriptions',
         roles: ['STUDENT']
       }
     ];
