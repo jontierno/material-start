@@ -3,10 +3,10 @@
   'use strict';
 
   angular.module('course')
-         .service('courseService', ['$q', '$log', CourseService]);
+         .service('courseService', ['$q', '$log','localStorageService', CourseService]);
 
 
-  function CourseService($q, $log, authService){
+  function CourseService($q, $log, localStorageService){
     var courses = [
       {
         code: "11A",
@@ -49,9 +49,21 @@
         vacancy: 30,
         classes: [{day: "Lunes",type: "Teórico Práctica Obligatoria ",from: '19:00',to: "22:00",place: "PC-302"}
         ,{day: "Miercoles",type: "Teórico Práctica Obligatoria ",from: '19:00',to: "22:00",place: "PC-302"}]
+      },{
+        code: "01",
+        subject: '65.03',
+        professors: [ 'Boeykens','Gobbi Miñones','Piol','Casaburi'],
+        vacancy: 20,
+        classes: [{day: "Lunes",type: "Teórico Obligatoria ",from: '16:00',to: "18:00",place: "PC-502"}
+        ,{day: "Martes",type: "Laboratorio Obligatoria ",from: '12:00',to: "18:00",place: "PC-502"}
+        ,{day: "Martes",type: "Clases de problemas Obligatoria ",from: '18:00',to: "20:00",place: "PC-502"}]
       }
-
     ];
+
+    //localStorageService.set("courses", courses);
+
+    courses =  localStorageService.get("courses");
+
 
     return {
       getCourses : function(subject) {
@@ -77,6 +89,7 @@
           for(var i in courses) {
             if(courses[i].subject == course.subject && courses[i].code == course.code) {
               courses[i].vacancy = courses[i].vacancy -1;
+              localStorageService.set("courses", courses);
             }
         }
       },
@@ -84,6 +97,7 @@
           for(var i in courses) {
             if(courses[i].subject == course.subject && courses[i].code == course.code) {
               courses[i].vacancy = courses[i].vacancy + 1;
+              localStorageService.set("courses", courses);
             }
         }
       }

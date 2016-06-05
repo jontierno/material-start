@@ -16,14 +16,17 @@
       {
         name: 'Inscribir',
         avatar: 'create',
-        state: 'app.inscription',
-        roles: ['STUDENT']
+        state: 'app.inscription'
       },
       {
         name: 'Ver Inscripciones',
         avatar: 'done_all',
-        state: 'app.inscriptions',
-        roles: ['STUDENT']
+        state: 'app.inscriptions'
+      },
+      {
+        name: 'Ver Carrera',
+        avatar: 'visibility',
+        state: 'app.career'
       }
     ];
 

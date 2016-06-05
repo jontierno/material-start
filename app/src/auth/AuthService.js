@@ -19,21 +19,20 @@
     return {
       login : function(user) {
         var deferred = $q.defer();
-
-        userService.loadUser(user.username)
+        return userService.loadUser(user.username)
           .then(function (userFound) {
+
               if(userFound.password == user.password) {
                 authenticatedUser = userFound;
-                deferred.resolve();
+                return $q.resolve();
               } else {
-                deferred.reject('Username/Pasword invalid');
+                return $q.reject('Username/Pasword inválido');
               }
 
-          }, function (){
-            deferred.reject('Username/Pasword invalid');
+          }).catch(function (err){
+              return $q.reject('Username/Pasword inválido');
           });
         
-         return deferred.promise;   
       },
       getCurrentUser: function () {
           var def = $q.defer();

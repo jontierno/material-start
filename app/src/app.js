@@ -1,5 +1,5 @@
 angular
-    .module('fiubaApp', ['ngMaterial','ui.router','login','auth', 'career', 'register', 'main'])
+    .module('fiubaApp', ['ngMaterial','ui.router','login','auth', 'career', 'register', 'main', 'LocalStorageModule'])
     .config(function($mdThemingProvider, $mdIconProvider, $stateProvider, $urlRouterProvider){
 
      //   $mdIconProvider

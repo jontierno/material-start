@@ -2,42 +2,59 @@
   'use strict';
 
   angular.module('users')
-         .service('userService', ['$q', UserService]);
+         .service('userService', ['$q', 'localStorageService', UserService]);
 
-  function UserService($q){
+  function UserService($q, localStorageService){
+
     var users = [
       {
-        username: "user",
-        password  :"user",
+        username: "user1",
+        password  :"user1",
         name: "Jonathan Tierno",
         career: 10,
         registers: []
-//        registers: [{code: "11A",
- //       subject: '61.03'}]
+      },
+      {
+        username: "user2",
+        password  :"user2",
+        name: "Juan Perez",
+        career: 13,
+        registers: []
       }
     ];
+    
 
+    //localStorageService.set("users", users);
+
+    users =  localStorageService.get("users");
     // Promise-based API
+    function findUser(username) {
+        for(var i in users) {
+          if(users[i].username == username) {
+            return i;
+          }
+        }
+        return null;
+    }
     return {
       loadAllUsers : function() {
         return $q.when(users);
       },
       loadUser:function (username) {
-        var deferred = $q.defer();
-        for(var i in users) {
-          if(users[i].username == username) {
-            deferred.resolve(angular.copy(users[i]));
-          }
-          deferred.reject();
-          return deferred.promise;
+        var index = findUser(username);
+        if(index != null) {
+          return $q.when(angular.copy(users[index]))
         }
+        return $q.reject();
       },
         save: function(user) {
-          var promise = this.loadUser(user.username);
-          return promise
-            .then(function(userFound) {
-               userFound = angular.copy(user);
-            });
+          var i = findUser(user.username);
+          if(i != null) {
+            users[i] = angular.copy(user);
+            localStorageService.set("users", users);
+            return $q.when();
+          }
+          return $q.reject("User not found"); 
         }
 
     };

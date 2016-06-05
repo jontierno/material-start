@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('course', ['auth']);
+  angular.module('course', ['auth', 'LocalStorageModule']);
 
 
 })();
